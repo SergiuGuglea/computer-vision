@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewData["Title"] = "Live Object Detection";
+}
+
+<div class="row mt-4">
+   
+        <div class="col-12 my-2">
+            <button type="button" class="btn btn-primary mx-3" onclick="PlayVideo()">Play Video</button>
+            <button type="button" class="btn btn-secondary mx-3" onclick="PauseVideo()">Pause Video</button>
+        </div>
+   
+    <div class="col-12 col-md-6">
+       
+        
+        <video id="liveStream"></video>
+       
+    </div>
+    <div class="col-12 col-md-6">
+        <img id="screenShot" class="img-fluid" />
+    </div>
+</div>
+
+<h1>LiveDetection</h1>
+
+
+
+@section Scripts{
+	<script src="~/js/signalr.min.js"></script>
+	<script src="~/js/chat.js"></script>
+}
+

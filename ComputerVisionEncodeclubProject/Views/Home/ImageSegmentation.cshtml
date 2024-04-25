@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewData["Title"] = "Image Segmentation";
+}
+
+<div class="row mt-3">
+    <h2>Image Segmentation</h2>
+    <div class="col-12 col-md-6">
+        <form class="w-100 my-5" method="post" asp-controller="Home" asp-action="ImageSegmentation">
+            <label for="txtImageUrl" class="form-label mt-4">Image Url</label>
+            <input type="text" class="form-control mt-4" id="txtImageUrl" name="imageUrl" placeholder="Enter image url">
+            <button type="submit" class="btn btn-primary mt-4">Upload</button>
+        </form>
+    </div>
+</div>
+
+@if (TempData["OriginalImage"] is not null && TempData["SegmentedImage"] is not null)
+{
+    <div class="row">
+
+        <div class="col-12 col-md-6">
+            <h3>Original Image</h3>
+            <img src="@TempData["OriginalImage"]" class="img-fluid" />
+        </div>
+
+        <div class="col-12 col-md-6">
+            <h3>Segmented Image</h3>
+            <img src="@TempData["SegmentedImage"]" class="img-fluid" />
+        </div>
+    </div>
+}
